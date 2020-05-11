@@ -6,7 +6,7 @@ module.exports = function(app) {
         response.sendFile(path.join(__dirname, "/../public/home.html"));
       });
     
-      app.get("/survey", function(request, ressponse) {
+      app.get("/survey", function(request, response) {
         response.sendFile(path.join(__dirname, "/../public/survey.html"));
       });
 // By default, send the user to the home page

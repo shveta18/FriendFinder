@@ -1,15 +1,8 @@
+var matchListArray = require("./../data/friends");
+module.exports =function(app) {
 // display json of all possible friends
-app.get("/api/friends", function(req, res) {
-    res.sendFile(path.join(__dirname, "/public/home.html"));
-  });
+app.get("/friends", function(request, response) {
+  response.json(matchListArray);
+});
 
-  app.post("/api/friends", function(req, res) {
-    if (friends.length < 5) {
-      friends.push(req.body);
-      res.json(true);
-    }
-    else {
-      waitListData.push(req.body);
-      res.json(false);
-    }
-  });
+}

@@ -1,0 +1,26 @@
+1. Create folder structure
+2. On server.js file, activate the port and deploy to heroku
+3. Create html pages for 
+- home page
+    -- link survey page to home
+- survey page
+
+4. Create friends.js file with array containing all friends data
+5. On htmlRoutes.js use get to reach survey and home pages
+5. On apiRoutes.js use get to 
+
+array data for friends.js
+Arya Stark
+[5,0,1,0,0,0,5,0,0,0]
+
+Tyrion Lannister
+[0,5,0,0,0,2,3,5,2,0]
+
+Peter Baelish
+[0,2,0,0,5,0,3,0,0,0]
+
+Lord Varys
+[0,3,0,0,2,5,4,0,5,0]
+
+John Snow
+[0,2,5,5,0,0,3,0,0,0]

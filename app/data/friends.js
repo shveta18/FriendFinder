@@ -1,4 +1,4 @@
-var matchList = [
+var matchListArray = [
     {
         "name": "Arya",
         "photo": "https://en.wikipedia.org/wiki/Arya_Stark#/media/File:Arya_Stark-Maisie_Williams.jpg",
@@ -25,3 +25,5 @@ var matchList = [
         "scores": [0, 2, 5, 5, 0, 0, 3, 0, 0, 0]
     },
 ]
+// export the array so it is available on other .js files
+module.exports = matchListArray;

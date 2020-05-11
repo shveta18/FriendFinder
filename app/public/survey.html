@@ -7,7 +7,7 @@
     <title>Quiz</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        
+
 </head>
 
 <body>
@@ -18,12 +18,12 @@
             <h3>About You</h3>
             <div class="form-group">
                 <label for="exampleFormControlTextarea1">Name (Required)</label>
-                <input type="text" class="form-control" placeholder="name" aria-label="name"
+                <input type="text" class="form-control" id="name" placeholder="name" aria-label="name"
                     aria-describedby="basic-addon1">
             </div>
             <div class="form-group">
                 <label for="exampleFormControlTextarea1">Web link to photo (Required)</label>
-                <input type="text" class="form-control" placeholder="Enter URL" aria-label="url"
+                <input type="text" class="form-control" id="url" placeholder="Enter URL" aria-label="url"
                     aria-describedby="basic-addon1">
             </div>
             <hr>
@@ -32,7 +32,7 @@
                 <h3>Question 1</h3>
                 <label for="exampleFormControlSelect1">You totally beleive in documenting your woes and have a long list
                     of people you'd like to umm ... hurt in a pretty serious way... just once.</label>
-                <select class="form-control" id="exampleFormControlSelect1">
+                <select class="form-control" id="a1">
                     <option>1 (Strongly Disagree)</option>
                     <option>2</option>
                     <option>3</option>
@@ -45,7 +45,7 @@
                 <h3>Question 2</h3>
                 <label for="exampleFormControlSelect1">You think that dwarves are bastards in their father's
                     eyes.</label>
-                <select class="form-control" id="exampleFormControlSelect1">
+                <select class="form-control" id="a2">
                     <option>1 (Strongly Disagree)</option>
                     <option>2</option>
                     <option>3</option>
@@ -57,7 +57,7 @@
             <div class="form-group" id="q3">
                 <h3>Question 3</h3>
                 <label for="exampleFormControlSelect1">People usually tell you that you know nothing.</label>
-                <select class="form-control" id="exampleFormControlSelect1">
+                <select class="form-control" id="a3">
                     <option>1 (Strongly Disagree)</option>
                     <option>2</option>
                     <option>3</option>
@@ -72,7 +72,7 @@
                     beautiful black ringlets and silky shine, and that your skill with Valyrian steel is just legendary,
                     and that in 8 years your character arc will be ruined... I'm sorry I'm getting carried away but go
                     ahead answer the question.</label>
-                <select class="form-control" id="exampleFormControlSelect1">
+                <select class="form-control" id="a4">
                     <option>1 (Strongly Disagree)</option>
                     <option>2</option>
                     <option>3</option>
@@ -85,7 +85,7 @@
                 <h3>Question 5</h3>
                 <label for="exampleFormControlSelect1">Amidst chaos, your devious little mind begins to picture ladders
                     everywhere.</label>
-                <select class="form-control" id="exampleFormControlSelect1">
+                <select class="form-control" id="a5">
                     <option>1 (Strongly Disagree)</option>
                     <option>2</option>
                     <option>3</option>
@@ -98,7 +98,7 @@
                 <h3>Question 6</h3>
                 <label for="exampleFormControlSelect1">You're pretty hurt about spiders - North or South, they sing no
                     songs for spiders. <i>Itsy bitsy spider</i> doesn't count.</label>
-                <select class="form-control" id="exampleFormControlSelect1">
+                <select class="form-control" id="a6">
                     <option>1 (Strongly Disagree)</option>
                     <option>2</option>
                     <option>3</option>
@@ -111,7 +111,7 @@
                 <h3>Question 7</h3>
                 <label for="exampleFormControlSelect1">You're the child prodigy of the family. You learnt early on -
                     Fear cuts deeper than swords.</label>
-                <select class="form-control" id="exampleFormControlSelect1">
+                <select class="form-control" id="a7">
                     <option>1 (Strongly Disagree)</option>
                     <option>2</option>
                     <option>3</option>
@@ -124,7 +124,7 @@
                 <h3>Question 8</h3>
                 <label for="exampleFormControlSelect1">You love books because - A mind needs books as a sword needs a
                     whetstone, if it is to keep its edge.</label>
-                <select class="form-control" id="exampleFormControlSelect1">
+                <select class="form-control" id="a8">
                     <option>1 (Strongly Disagree)</option>
                     <option>2</option>
                     <option>3</option>
@@ -136,7 +136,7 @@
                 <h3>Question 9</h3>
                 <label for="exampleFormControlSelect1">You feel like you're the only one in the world serving the realm
                     and it has had a devastating affect on your hairline.</label>
-                <select class="form-control" id="exampleFormControlSelect1">
+                <select class="form-control" id="a9">
                     <option>1 (Strongly Disagree)</option>
                     <option>2</option>
                     <option>3</option>
@@ -148,7 +148,7 @@
                 <h3>Question 10</h3>
                 <label for="exampleFormControlSelect1">You beleive gold wins wars, not soldiers. You're a wizard with
                     money!</label>
-                <select class="form-control" id="exampleFormControlSelect1">
+                <select class="form-control" id="a10">
                     <option>1 (Strongly Disagree)</option>
                     <option>2</option>
                     <option>3</option>
@@ -156,7 +156,8 @@
                     <option>5 (Strongly Agree)</option>
                 </select>
             </div>
-            <button type="submit" class="btn btn-primary"> Submit: Da.da.dada.da.da...<span class="fas fa-music"></span></button>
+            <button type="submit" class="btn btn-primary" id="submit-btn"> Submit: Da.da.dada.da.da...<span
+                    class="fas fa-music"></span></button>
         </div>
     </form>
 
@@ -170,11 +171,34 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
-        <script src="https://kit.fontawesome.com/bb6539ba94.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/bb6539ba94.js" crossorigin="anonymous"></script>
+<!-- When user clicks on the submit button, grab the values from the each of the fields-->
+    <script type="text/javascript">
+        $("#submit-btn").on("click", function () {
+            event.preventDefault();
 
-        <script>
-            
-        </script> 
+            var userInfo = {
+                name: $("#name").val().trim(),
+                photo: $("#url").val().trim(),
+                score: [
+                    $("#a1 option:selected").text(),
+                    $("#a2 option:selected").text(),
+                    $("#a3 option:selected").text(),
+                    $("#a4 option:selected").text(),
+                    $("#a5 option:selected").text(),
+                    $("#a6 option:selected").text(),
+                    $("#a7 option:selected").text(),
+                    $("#a8 option:selected").text(),
+                    $("#a9 option:selected").text(),
+                    $("#a10 option:selected").text(),
+                ]
+            };
+            console.log(userInfo);
+
+
+
+        });
+    </script>
 </body>
 
 </html>

@@ -9,7 +9,7 @@ app.get("/friends", function(request, response) {
 // add POST code to handle survey results
 
 app.post("/friends", function(request, response){
-  
+  friendsArray.push(request.body);
   response.json()
 })
 } 

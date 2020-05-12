@@ -1,40 +1,45 @@
 var friendsArray = require("./../data/friends");
-module.exports =function(app) {
-// display json of all possible friends
-app.get("/friends", function(request, response) {
-  response.json(friendsArray);
-});
+module.exports = function (app) {
+  // display json of all possible friends
+  app.get("/friends", function (request, response) {
+    response.json(friendsArray);
+  });
 
 
-// add POST code to handle survey results
+  // add POST code to handle survey results
 
-app.post("/friends", function(request, response){
-  friendsArray.push(request.body);
-  // store the current submission in an array 
-  var userData = friendsArray[friendsArray.length-1];
-  var userScore = userData.score;
-  console.log(userScore);
-  // How to calculate the match based on user submissions: 
-  // 1. grab each user in the list and get the scores array
-for (var i = 0; i<friendsArray.length ; i++) {
-var savedScores = friendsArray[i].scores;
-console.log(savedScores);
-//   for (var j = 0; j<savedScores.length; j++) {
-//     var difference = Math.abs(newSubmission[j] - savedScores[j]);
-//     console.log("Difference in values" + difference);
-    
+  app.post("/friends", function (request, response) {
+    friendsArray.push(request.body);
+    // store the current submission in an array by taking the last value in the array 
+    var userData = friendsArray[friendsArray.length - 1];
+    // grab the actual scores from the userData array
+    var userScore = userData.score;
+    console.log(userScore);
+    differenceArray = [];
 
-}
+    // How to calculate the match based on user submissions: 
+    // 1. grab each user in the list (except last) and get the scores array 
+    for (var i = 0; i < friendsArray.length - 1; i++) {
+      var savedScores = friendsArray[i].scores;
+      console.log("The Saved scores for users are");
+      console.log(savedScores);
+      // for each value in the array, calculate the difference and store it in a totalDiff variable
+      var totalDiff = 0;
+      for (var j = 0; j < savedScores.length; j++) {
+        var difference = Math.abs(userScore[j] - savedScores[j]);
+        totalDiff = totalDiff + difference;
+      }
+      // store the final value of the totalDiff in an array
+      console.log("the sum of the TOTALdifference is ---");
+      console.log(totalDiff);
+      differenceArray.push(totalDiff);
+    }
+    console.log("The difference Array looks like this: ");
+    console.log(differenceArray);
 
-// }
-  // 2. get the user's score and store in an array
-  // 3. get the difference between each number for the two users and store in an array 
-  // 4. if anything is a negative, convert to positive
-  // 5. add up the numbers and store in an array
-  // 6. travers the array and pick which position has the lowest score
-  // 7. pull the best match for the user in that position
+  
 
- 
-  response.json(friendsArray);
-})
+   
+    response.json(friendsArray);
+  })
 } 

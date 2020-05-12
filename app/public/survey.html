@@ -162,7 +162,8 @@
     </form>
 
 
-    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
         crossorigin="anonymous"></script>
@@ -197,34 +198,13 @@
             var currentURL = window.location.origin;
             //2. do a post request to the url /friends and send the userInfo data 
 
-            $.post(currentURL + '/friends', userInfo, function(data) {
+            $.post(currentURL + '/friends', userInfo, function (data) {
                 console.log("request sent containing UserInfo details to server.");
                 // clear out the selections entered
                 $("#name").val("");
-                    $("#url").val("");
-                    //$("#a1 option:selected").val("");
-                //     $("#a2 option:selected").text(),
-                //     $("#a3 option:selected").text(),
-                //     $("#a4 option:selected").text(),
-                //     $("#a5 option:selected").text(),
-                //     $("#a6 option:selected").text(),
-                //     $("#a7 option:selected").text(),
-                //     $("#a8 option:selected").text(),
-                //     $("#a9 option:selected").text(),
-                //     $("#a10 option:selected").text(),
-                // 
+                $("#url").val("");
 
             });
-           
-                
-           
-
-            // HTTP req
-            // 1. URI
-            // 2. may Params/query string ?a=b&c=2
-            // 3. specify METHOD (GET POST)
-            // 4. Headers
-            // 5. Data
 
 
         });

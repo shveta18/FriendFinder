@@ -4,7 +4,7 @@ var path = require("path");
 
 //create express server
 var app = express();
-//var PORT = 3000;
+//var PORT = 3000; the port is dynamically assigned by the hosting environment so we write the code below
 var PORT = process.env.PORT || 3000;
 
 // Sets up the Express app to handle data parsing

@@ -162,9 +162,7 @@
     </form>
 
 
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
         crossorigin="anonymous"></script>
@@ -172,7 +170,7 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/bb6539ba94.js" crossorigin="anonymous"></script>
-<!-- When user clicks on the submit button, grab the values from the each of the fields-->
+    <!-- When user clicks on the submit button, grab the values from the each of the fields-->
     <script type="text/javascript">
         $("#submit-btn").on("click", function () {
             event.preventDefault();
@@ -194,7 +192,39 @@
                 ]
             };
             console.log(userInfo);
+            // POST the info stored in userInfo to the friends page
+            //1. Get current URL
+            var currentURL = window.location.origin;
+            //2. do a post request to the url /friends and send the userInfo data 
 
+            $.post(currentURL + '/friends', userInfo, function(data) {
+                console.log("request sent containing UserInfo details to server.");
+                // clear out the selections entered
+                $("#name").val("");
+                    $("#url").val("");
+                    //$("#a1 option:selected").val("");
+                //     $("#a2 option:selected").text(),
+                //     $("#a3 option:selected").text(),
+                //     $("#a4 option:selected").text(),
+                //     $("#a5 option:selected").text(),
+                //     $("#a6 option:selected").text(),
+                //     $("#a7 option:selected").text(),
+                //     $("#a8 option:selected").text(),
+                //     $("#a9 option:selected").text(),
+                //     $("#a10 option:selected").text(),
+                // 
+
+            });
+           
+                
+           
+
+            // HTTP req
+            // 1. URI
+            // 2. may Params/query string ?a=b&c=2
+            // 3. specify METHOD (GET POST)
+            // 4. Headers
+            // 5. Data
 
 
         });

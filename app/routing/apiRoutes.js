@@ -37,9 +37,18 @@ module.exports = function (app) {
     console.log("The difference Array looks like this: ");
     console.log(differenceArray);
 
-  
+    //get minimum value within the array.
+    var minValue = Math.min(differenceArray);
+    console.log(minValue);
+    // for the differenceArray, what position is the min value
+    // for (var k = 0; k < differenceArray.length; k++) {
+    //   if (minValue === differenceArray[k]) {
+    //     console.log("Position is:");
+    //     console.log([k]);
+    //     console.log("The closest match is:");
+    //     console.log(friendsArray[k]);
+    //   }
+ // }
 
-   
-    response.json(friendsArray);
-  })
+});
 } 

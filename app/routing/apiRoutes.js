@@ -9,6 +9,8 @@ module.exports = function (app) {
   // add POST code to handle survey results
 
   app.post("/friends", function (request, response) {
+    
+    console.log(request.body);
     friendsArray.push(request.body);
     // store the current submission in an array by taking the last value in the array 
     var userData = friendsArray[friendsArray.length - 1];
@@ -27,7 +29,8 @@ module.exports = function (app) {
       var totalDiff = 0;
       for (var j = 0; j < savedScores.length; j++) {
         var difference = Math.abs(userScore[j] - savedScores[j]);
-        totalDiff = totalDiff + difference;
+        totalDiff = parseInt(totalDiff + difference);
+         
       }
       // store the final value of the totalDiff in an array
       console.log("the sum of the TOTALdifference is ---");
@@ -38,17 +41,28 @@ module.exports = function (app) {
     console.log(differenceArray);
 
     //get minimum value within the array.
-    var minValue = Math.min(differenceArray);
-    console.log(minValue);
+
+ 
+    // var minValue = Math.min(differenceArray);
+    // console.log(minValue);
     // for the differenceArray, what position is the min value
-    // for (var k = 0; k < differenceArray.length; k++) {
-    //   if (minValue === differenceArray[k]) {
-    //     console.log("Position is:");
-    //     console.log([k]);
-    //     console.log("The closest match is:");
-    //     console.log(friendsArray[k]);
-    //   }
- // }
+    for (var k = 0; k < differenceArray.length; k++) {
+      val1 = differenceArray[k];
+      val2 = differenceArray[k+1];
+      if (val1 < val2) {
+        position = k;
+        k = k+1;
+      }
+      if (val2 < val1) {
+        position = k+1;
+      }
+      if(val1 === val2) {
+        position = k;
+        k = k+1;
+      }
+      
+ }
+ console.log(position);
 
 });
 } 

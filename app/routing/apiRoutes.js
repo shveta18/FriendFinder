@@ -9,7 +9,7 @@ module.exports = function (app) {
   // add POST code to handle survey results
 
   app.post("/friends", function (request, response) {
-    
+
     console.log(request.body);
     friendsArray.push(request.body);
     // store the current submission in an array by taking the last value in the array 
@@ -30,7 +30,7 @@ module.exports = function (app) {
       for (var j = 0; j < savedScores.length; j++) {
         var difference = Math.abs(userScore[j] - savedScores[j]);
         totalDiff = parseInt(totalDiff + difference);
-         
+
       }
       // store the final value of the totalDiff in an array
       console.log("the sum of the TOTALdifference is ---");
@@ -42,27 +42,26 @@ module.exports = function (app) {
 
     //get minimum value within the array.
 
- 
-    // var minValue = Math.min(differenceArray);
+
+    // var minValue = Math.min(differenceArray); 
     // console.log(minValue);
     // for the differenceArray, what position is the min value
     for (var k = 0; k < differenceArray.length; k++) {
       val1 = differenceArray[k];
-      val2 = differenceArray[k+1];
+      val2 = differenceArray[k + 1];
       if (val1 < val2) {
         position = k;
-        k = k+1;
+        k = k + 1;
       }
       if (val2 < val1) {
-        position = k+1;
+        position = k + 1;
       }
-      if(val1 === val2) {
+      if (val1 === val2) {
         position = k;
-        k = k+1;
+        k = k + 1;
       }
-      
- }
- console.log(position);
-
-});
+    }
+    console.log(position);
+    response.json(friendsArray[position]);
+  });
 } 

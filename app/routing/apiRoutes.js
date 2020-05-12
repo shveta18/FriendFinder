@@ -10,8 +10,23 @@ app.get("/friends", function(request, response) {
 
 app.post("/friends", function(request, response){
   friendsArray.push(request.body);
+  // store the current submission in an array 
+  var userData = friendsArray[friendsArray.length-1];
+  var userScore = userData.score;
+  console.log(userScore);
   // How to calculate the match based on user submissions: 
   // 1. grab each user in the list and get the scores array
+for (var i = 0; i<friendsArray.length ; i++) {
+var savedScores = friendsArray[i].scores;
+console.log(savedScores);
+//   for (var j = 0; j<savedScores.length; j++) {
+//     var difference = Math.abs(newSubmission[j] - savedScores[j]);
+//     console.log("Difference in values" + difference);
+    
+
+}
+
+// }
   // 2. get the user's score and store in an array
   // 3. get the difference between each number for the two users and store in an array 
   // 4. if anything is a negative, convert to positive

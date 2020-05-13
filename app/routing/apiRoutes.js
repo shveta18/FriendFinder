@@ -7,25 +7,23 @@ module.exports = function (app) {
 
 
   // add POST code to handle survey results
-
   app.post("/friends", function (request, response) {
-
-    console.log(request.body);
+    // push the request from client into the friends array
     friendsArray.push(request.body);
-    // store the current submission in an array by taking the last value in the array 
+    // Store the latest data being input by the user into an array called userData and grab the actual scores from this array
     var userData = friendsArray[friendsArray.length - 1];
-    // grab the actual scores from the userData array
     var userScore = userData.score;
-    console.log(userScore);
-    differenceArray = [];
+    var differenceArray = [];
+    var savedScores = [];
 
-    // How to calculate the match based on user submissions: 
+    // Calculate the friend match based on user submissions: 
     // 1. grab each user in the list (except last) and get the scores array 
+    console.log("-------this is the friends array and scores------");
     for (var i = 0; i < friendsArray.length - 1; i++) {
-      var savedScores = friendsArray[i].scores;
-      console.log("The Saved scores for users are");
+      console.log(friendsArray[i]);
+      console.log("The Saved scores for this friend is");
       console.log(savedScores);
-      // for each value in the array, calculate the difference and store it in a totalDiff variable
+      // for each element of the array, calculate the difference between userScore and savedScore. Add all values to get totalDiff
       var totalDiff = 0;
       for (var j = 0; j < savedScores.length; j++) {
         var difference = Math.abs(userScore[j] - savedScores[j]);
@@ -33,12 +31,12 @@ module.exports = function (app) {
 
       }
       // store the final value of the totalDiff in an array
-      console.log("the sum of the TOTALdifference is ---");
-      console.log(totalDiff);
+      //console.log("the sum of the TOTALdifference is ---");
+      //console.log(totalDiff);
       differenceArray.push(totalDiff);
     }
-    console.log("The difference Array looks like this: ");
-    console.log(differenceArray);
+    //console.log("The difference Array looks like this: ");
+    // console.log(differenceArray);
 
     //get minimum value within the array.
 

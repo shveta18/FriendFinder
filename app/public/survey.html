@@ -31,7 +31,7 @@
             <div class="form-group" id="q1">
                 <h3>Question 1</h3>
                 <label for="exampleFormControlSelect1">You totally beleive in documenting your woes and have a long list
-                    of people you'd like to umm ... hurt in a pretty serious way... just once.</label>
+                    of people you'd like to umm ... <i>hurt</i> in a pretty serious way... just once.</label>
                 <select class="form-control" id="a1">
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2</option>
@@ -68,10 +68,9 @@
 
             <div class="form-group" id="q4">
                 <h3>Question 4</h3>
-                <label for="exampleFormControlSelect1">People usually comment on how great your hair is with the
-                    beautiful black ringlets and silky shine, and that your skill with Valyrian steel is just legendary,
-                    and that in 8 years your character arc will be ruined... I'm sorry I'm getting carried away but go
-                    ahead answer the question.</label>
+                <label for="exampleFormControlSelect1">People usually tell you and that your skill with Valyrian steel is just legendary,
+                    and that in 8 years your character arc will be ruined... I'm sorry, I'm not over it yet, but go
+                    ahead and answer the question.</label>
                 <select class="form-control" id="a4">
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2</option>
@@ -180,6 +179,7 @@
                 </div>
                 <div class="modal-body">
                     <div id="match-name">
+                        <h3 id="match-name-name"></h3>
 
                     </div>
                     <div id="match-image"><img id="match-image-img">
@@ -229,7 +229,7 @@
             $.post(currentURL + '/friends', userInfo, function (data) {
                 $("#name").val("");
                 $("#url").val("");
-                $("#match-name").html(data.name);
+                $("#match-name-name").html(data.name);
                 $("#match-image-img").attr('src', data.photo);
             });
         });

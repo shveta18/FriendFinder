@@ -160,6 +160,12 @@
                 data-target="#exampleModal"> Submit: Da.da.dada.da.da...<span class="fas fa-music"></span></button>
         </div>
     </form>
+    <hr>
+    <div class="container">
+        <footer>
+            <p><a href="/friends">API Friends List</a>|<a href="https://github.com/shveta18/FriendFinder">GitHub Repo</a></p>
+        </footer>
+    </div>
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -187,7 +193,6 @@
             </div>
         </div>
     </div>
-
 
     <script src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
@@ -218,25 +223,15 @@
                     $("#a10 option:selected").val(),
                 ]
             };
-            console.log(userInfo);
+            //console.log(userInfo);
             // POST the info stored in userInfo to the friends page
-            //1. Get current URL
             var currentURL = window.location.origin;
-            //2. do a post request to the url /friends and send the userInfo data 
-
             $.post(currentURL + '/friends', userInfo, function (data) {
-                console.log("request sent containing UserInfo details to server.");
-                // clear out the selections entered
-                // $("#name").val("");
-                // $("#url").val("");
-
-                console.log(data);
-                console.log(data.name);
+                $("#name").val("");
+                $("#url").val("");
                 $("#match-name").html(data.name);
                 $("#match-image-img").attr('src', data.photo);
             });
-
-
         });
     </script>
 </body>

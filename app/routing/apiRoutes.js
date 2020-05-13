@@ -28,21 +28,10 @@ module.exports = function (app) {
       for (var j = 0; j < savedScores.length; j++) {
         var difference = Math.abs(userScore[j] - savedScores[j]);
         totalDiff = parseInt(totalDiff + difference);
-
       }
-      // store the final value of the totalDiff in an array
-      //console.log("the sum of the TOTALdifference is ---");
-      //console.log(totalDiff);
+      // store the final value of the totalDiff in an array for each friend
       differenceArray.push(totalDiff);
     }
-    //console.log("The difference Array looks like this: ");
-    // console.log(differenceArray);
-
-    //get minimum value within the array.
-
-
-    // var minValue = Math.min(differenceArray); 
-    // console.log(minValue);
     // for the differenceArray, what position is the min value
     for (var k = 0; k < differenceArray.length; k++) {
       val1 = differenceArray[k];
